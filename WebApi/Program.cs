@@ -16,6 +16,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<FileContext>();
 builder.Services.AddScoped<IReditorDao, ReditorFileDao>();
 builder.Services.AddScoped<IReditorInterface, ReditorLogic>();
+builder.Services.AddScoped<IRedditPostDao, RedditPostDao>();
+builder.Services.AddScoped<IPostLogic, RedditPostLogic>();
+
+
 
 var app = builder.Build();
 

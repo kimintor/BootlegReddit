@@ -1,1 +1,47 @@
-{"Reditors":[{"Id":1,"Username":"12345523"}],"RedditPosts":[]}
+{
+  "Reditors": [
+    {
+      "Id": 1,
+      "Username": "12345523"
+    },
+    {
+      "Id": 2,
+      "Username": "bilka"
+    }
+  ],
+  "RedditPosts": [
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "12345523"
+      },
+      "Id": 1,
+      "Title": "string",
+      "Body": null,
+      "upvotes": 0,
+      "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "12345523"
+      },
+      "Id": 2,
+      "Title": "piece of noob",
+      "Body": null,
+      "upvotes": 0,
+      "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 2,
+        "Username": "bilka"
+      },
+      "Id": 3,
+      "Title": "string",
+      "Body": "bonkers and monkers",
+      "upvotes": 0,
+      "downvotes": 0
+    }
+  ]
+}

@@ -38,4 +38,12 @@ public class ReditorFileDao:IReditorDao
 
         return Task.FromResult(existing);
     }
+
+    public Task<Reditor?> GetByIdAsync(int id)
+    {
+        Reditor? exisiting = context.Reditors.First(
+            r => r.Id == id);
+
+        return Task.FromResult(exisiting);
+    }
 }
