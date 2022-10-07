@@ -6,4 +6,6 @@ namespace Application.LogicInterfaces;
 public interface IPostLogic
 {
     Task<RedditPost> CreateAsync(PostCreationDto dto);
+
+    public Task<IEnumerable<PostTitleDto>> GetPostTitles();
 }

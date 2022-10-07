@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Domain.DTOs;
+using Domain.Models;
 
 namespace FileData.DAOs;
 using Application.DaoInterfaces;
@@ -27,5 +28,18 @@ public class RedditPostDao:IRedditPostDao
         context.SaveChanges();
 
         return Task.FromResult(redditPost);
+    }
+
+    public Task<IEnumerable<PostTitleDto>> GetPostTitles()
+    {
+        List<RedditPost> posts = context.RedditPosts.AsEnumerable().ToList();
+        List<PostTitleDto> result = new List<PostTitleDto>();
+        for (int i = 0; i < posts.Count; i++)
+        {
+            result.Add(new PostTitleDto(posts[i].Title));
+        }
+        
+        return Task.FromResult(result.AsEnumerable());
+        
     }
 }

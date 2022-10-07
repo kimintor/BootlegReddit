@@ -30,4 +30,18 @@ public class PostController : ControllerBase
             return StatusCode(500,e.Message);
         }
     }
+
+    [HttpGet] 
+    public async Task<ActionResult<IEnumerable<PostTitleDto>>> GetTitlesAsync() {
+        try
+        {
+            IEnumerable<PostTitleDto> result = await postLogic.GetPostTitles();
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }
