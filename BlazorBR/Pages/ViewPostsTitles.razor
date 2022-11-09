@@ -1,0 +1,60 @@
+﻿@page "/ViewPostsTitles"
+@using HttpClients.ClientInterfaces
+@using Domain.Models
+@inject IPostService PostService
+@inject NavigationManager navigationManager
+<h3>ViewPostsTitles</h3>
+
+
+
+@if (posts == null)
+{
+}
+else if (!posts.Any())
+{
+    <p>No posts to diplay</p>
+}
+else
+{
+    <ul class="titles"  >
+        @foreach(RedditPost x in posts)
+    {
+        <li><button type="button" @onclick="@(() => GoToPost(x.Id))">@x.Title</button></li>
+    }
+        <p>@_msg</p>
+    </ul>
+}
+@code {
+    private IEnumerable<RedditPost>? posts;
+    private string _msg = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+       base.OnInitialized();
+        
+        try
+        {
+            
+            posts = await PostService.GetAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            _msg = e.Message;
+        }
+    }
+
+    public void GoToPost(int postId)
+    {
+        navigationManager.NavigateTo($"ViewPost/{postId}");
+    }
+
+    private async Task LoadPosts()
+    {
+       
+       
+    }
+
+    
+
+}

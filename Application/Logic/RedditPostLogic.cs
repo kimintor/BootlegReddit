@@ -37,6 +37,16 @@ public class RedditPostLogic:IPostLogic
         return postDao.GetPostTitles();
     }
 
+    public Task<IEnumerable<RedditPost>> GetPosts()
+    {
+        return postDao.GetPosts();
+    }
+
+    public Task<RedditPost> GetByID(int id)
+    {
+        return postDao.GetPostByID(id);
+    }
+
     private void ValidateRedditPost(PostCreationDto dto)
     {
         if (string.IsNullOrEmpty(dto.Title))

@@ -1,0 +1,51 @@
+﻿@page "/ViewPost/{PostID:int}"
+@using HttpClients.ClientInterfaces
+@using Domain.Models
+@inject IPostService postService
+@inject NavigationManager navigationManager
+<h3>ViewPost</h3>
+
+@if (post == null)
+{
+    <p>post not found</p>
+}
+else
+{
+    
+    <div class="container text-center row">
+        <div class="title">
+            <label>Title:</label>
+            <label>@post.Title</label>
+        </div>
+        <div class="author">
+            <label>Reditor:</label>
+            <p>@post.PostOwner.Username</p>
+        </div>
+        <div class="body">
+            <label>Title:</label>
+            <p>@post.Body</p>
+        </div>
+    </div>
+}
+@code {
+
+    [Parameter]
+    public int PostID { get; set; }
+
+    private RedditPost? post;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        try
+        {
+            base.OnInitialized();
+            post = await postService.GetByID(PostID);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+       
+    }
+
+}

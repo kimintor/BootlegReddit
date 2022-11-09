@@ -42,4 +42,20 @@ public class RedditPostDao:IRedditPostDao
         return Task.FromResult(result.AsEnumerable());
         
     }
+
+    public Task<IEnumerable<RedditPost>> GetPosts()
+    {
+        List<RedditPost> posts = context.RedditPosts.AsEnumerable().ToList();
+      
+        
+        return Task.FromResult(posts.AsEnumerable());
+    }
+
+    public Task<RedditPost> GetPostByID(int id)
+    {
+        RedditPost? exisiting = context.RedditPosts.First(
+            p => p.Id == id);
+
+        return Task.FromResult(exisiting);
+    }
 }

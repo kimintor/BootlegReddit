@@ -17,6 +17,7 @@ public class ReditorController:ControllerBase
     }
 
     [HttpPost]
+   
     public async Task<ActionResult<Reditor>> CreateAsync(ReditorCreationDto dto)
     {
         try

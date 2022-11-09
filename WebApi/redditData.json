@@ -7,6 +7,10 @@
     {
       "Id": 2,
       "Username": "bilka"
+    },
+    {
+      "Id": 3,
+      "Username": "hello"
     }
   ],
   "RedditPosts": [
@@ -17,7 +21,7 @@
       },
       "Id": 1,
       "Title": "heheh what now hackers",
-      "Body": null,
+      "Body": "today is the day we go in to the fray",
       "upvotes": 0,
       "downvotes": 0
     },
