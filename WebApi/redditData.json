@@ -2,7 +2,7 @@
   "Reditors": [
     {
       "Id": 1,
-      "Username": "12345523",
+      "Username": "admin",
       "Password": "admin"
     },
     {
@@ -62,6 +62,30 @@
       "Id": 4,
       "Title": "hello",
       "Body": "pot body",
+      "upvotes": 0,
+      "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "12345523",
+        "Password": "admin"
+      },
+      "Id": 5,
+      "Title": "this is a new post",
+      "Body": "body and mind",
+      "upvotes": 0,
+      "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "admin",
+        "Password": "admin"
+      },
+      "Id": 6,
+      "Title": "admin ",
+      "Body": "admin writing a post",
       "upvotes": 0,
       "downvotes": 0
     }
