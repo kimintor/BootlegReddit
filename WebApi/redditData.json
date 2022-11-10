@@ -2,22 +2,26 @@
   "Reditors": [
     {
       "Id": 1,
-      "Username": "12345523"
+      "Username": "12345523",
+      "Password": "admin"
     },
     {
       "Id": 2,
-      "Username": "bilka"
+      "Username": "bilka",
+      "Password": "admin"
     },
     {
       "Id": 3,
-      "Username": "hello"
+      "Username": "hello",
+      "Password": "admin"
     }
   ],
   "RedditPosts": [
     {
       "PostOwner": {
         "Id": 1,
-        "Username": "12345523"
+        "Username": "admin",
+        "Password": "admin"
       },
       "Id": 1,
       "Title": "heheh what now hackers",
@@ -28,7 +32,8 @@
     {
       "PostOwner": {
         "Id": 1,
-        "Username": "12345523"
+        "Username": "12345523",
+        "Password": "admin"
       },
       "Id": 2,
       "Title": "piece of noob",
@@ -39,11 +44,24 @@
     {
       "PostOwner": {
         "Id": 2,
-        "Username": "bilka"
+        "Username": "bilka",
+        "Password": "admin"
       },
       "Id": 3,
       "Title": "string",
       "Body": "bonkers and monkers",
+      "upvotes": 0,
+      "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "12345523",
+        "Password": "admin"
+      },
+      "Id": 4,
+      "Title": "hello",
+      "Body": "pot body",
       "upvotes": 0,
       "downvotes": 0
     }

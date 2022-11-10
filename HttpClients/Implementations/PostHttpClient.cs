@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Json;
+using System.Text.Json;
+using Domain.DTOs;
 using Domain.Models;
 using HttpClients.ClientInterfaces;
 
@@ -48,5 +50,22 @@ public class PostHttpClient : IPostService
 
         })!;
         return result;
+    }
+
+    public async Task<RedditPost> CreatePostAsync(PostCreationDto post)
+    {
+        HttpResponseMessage response = await client.PostAsJsonAsync("/Post", post);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
+
+        RedditPost postToReturn = JsonSerializer.Deserialize<RedditPost>(result, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
+
+        return postToReturn;
     }
 }

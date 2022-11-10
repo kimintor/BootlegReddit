@@ -2,11 +2,13 @@
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers.RedditPostController;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class PostController : ControllerBase
 {
     private readonly IPostLogic postLogic;
@@ -16,7 +18,7 @@ public class PostController : ControllerBase
         this.postLogic = postLogic;
     }
 
-    [HttpPost]
+    [HttpPost, AllowAnonymous]
     public async Task<ActionResult<RedditPost>> CreateAsync([FromBody] PostCreationDto dto)
     {
         try
@@ -31,7 +33,7 @@ public class PostController : ControllerBase
         }
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}"),AllowAnonymous]
 
     public async Task<ActionResult<RedditPost>> GetByID(int id)
     {
@@ -48,7 +50,7 @@ public class PostController : ControllerBase
     }
 
     [HttpGet] 
-    [Route("/GetPostTiles")]
+    [Route("/GetPostTiles"),AllowAnonymous]
     public async Task<ActionResult<IEnumerable<PostTitleDto>>> GetTitlesAsync() {
         try
         {
@@ -63,7 +65,7 @@ public class PostController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/Post")]
+    [Route("/Post"),AllowAnonymous]
 
     public async Task<ActionResult<IEnumerable<RedditPost>>> GetPostsAsync()
     {

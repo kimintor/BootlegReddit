@@ -1,9 +1,30 @@
 ﻿@page "/"
+@inject NavigationManager nvgMgr;
+<div class="container">
+    <AuthorizeView>
+        <NotAuthorized>
+            
+                 <div class="card">
+                                <h3>Hello, Log in to create a post</h3>
+                 </div>  
+            <button class="loginbtn" @onclick="GoToLoginPage">Log in</button>
+            
+        </NotAuthorized>
+        <Authorized>
+            <button class="btb" @onclick="GotoCreatePost">Create Post</button>
+        </Authorized>
+    </AuthorizeView>
+</div>
+@code
+{
+    private void GoToLoginPage()
+    {
+        nvgMgr.NavigateTo("https://localhost:7188/Login");
+    }
 
-<PageTitle>Index</PageTitle>
+    private void GotoCreatePost()
+    {
+        nvgMgr.NavigateTo("/CreatePost");
+    }
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?"/>
+}
