@@ -88,6 +88,18 @@
       "Body": "admin writing a post",
       "upvotes": 0,
       "downvotes": 0
+    },
+    {
+      "PostOwner": {
+        "Id": 1,
+        "Username": "admin",
+        "Password": "admin"
+      },
+      "Id": 7,
+      "Title": "kokok",
+      "Body": "dui90",
+      "upvotes": 0,
+      "downvotes": 0
     }
   ]
 }
