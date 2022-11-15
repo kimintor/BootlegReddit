@@ -34,6 +34,10 @@ public class ReditorLogic:IReditorInterface
         return created;
 
     }
+    public Task<Reditor> GetByID(int id)
+    {
+        return reditorDao.GetByIdAsync(id);
+    }
 
     private static void ValidateData(ReditorCreationDto reditorToCreate)
     {

@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBR", "BlazorBR\Blazor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClients", "HttpClients\HttpClients.csproj", "{37B0B3DF-87B0-4ABC-839D-9DC60B0D6A4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfcDataAccess_A", "EfcDataAccess_A\EfcDataAccess_A.csproj", "{8CAF7482-C09B-4F46-886E-DBE8F7E2C941}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{37B0B3DF-87B0-4ABC-839D-9DC60B0D6A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37B0B3DF-87B0-4ABC-839D-9DC60B0D6A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37B0B3DF-87B0-4ABC-839D-9DC60B0D6A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CAF7482-C09B-4F46-886E-DBE8F7E2C941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CAF7482-C09B-4F46-886E-DBE8F7E2C941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CAF7482-C09B-4F46-886E-DBE8F7E2C941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CAF7482-C09B-4F46-886E-DBE8F7E2C941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

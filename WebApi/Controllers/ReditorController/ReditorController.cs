@@ -31,4 +31,19 @@ public class ReditorController:ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    [HttpGet("{id:int}")]
+
+    public async Task<ActionResult<Reditor>> GetByID(int id)
+    {
+        try
+        {
+            Reditor result = await reditorLogic.GetByID(id);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

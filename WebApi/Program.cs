@@ -3,6 +3,8 @@ using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
 using Domain.Auth;
+using EfcDataAccess_A;
+using EfcDataAccess_A.DAOs;
 using FileData;
 using FileData.DAOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,11 +21,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<FileContext>();
-builder.Services.AddScoped<IReditorDao, ReditorFileDao>();
+builder.Services.AddScoped<IReditorDao, RedditorEfcDAO>();
 builder.Services.AddScoped<IReditorInterface, ReditorLogic>();
-builder.Services.AddScoped<IRedditPostDao, RedditPostDao>();
+builder.Services.AddScoped<IRedditPostDao, RedditPostEfcDao>();
 builder.Services.AddScoped<IPostLogic, RedditPostLogic>();
 builder.Services.AddScoped<IAuthService,AuthService>();
+builder.Services.AddDbContext<RedditContext>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;
